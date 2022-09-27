@@ -94,4 +94,19 @@ void m2o_operatorId2Mavlink(mavlink_open_drone_id_operator_id_t *mavOperatorID,
 void m2o_messagePack2Mavlink(mavlink_open_drone_id_message_pack_t *mavMessagePack,
                              ODID_MessagePack_data *messagePack);
 
+int m2o_basicId(mav2odid_t *m2o,
+                 mavlink_open_drone_id_basic_id_t *mavBasicId);
+int m2o_location(mav2odid_t *m2o,
+                 mavlink_open_drone_id_location_t *mavLocation);
+int m2o_authentication(mav2odid_t *m2o,
+                         mavlink_open_drone_id_authentication_t *mavAuthentication);
+int m2o_selfId(mav2odid_t *m2o,
+                mavlink_open_drone_id_self_id_t *mavSelfId);
+int m2o_system(mav2odid_t *m2o,
+                 mavlink_open_drone_id_system_t *mavSystem);
+int m2o_operatorId(mav2odid_t *m2o,
+                    mavlink_open_drone_id_operator_id_t *mavOperatorId);
+int m2o_messagePack(mav2odid_t *m2o,
+                     mavlink_open_drone_id_message_pack_t *mavMessagePack);
+
 #endif /* _MAV2ODID_H_ */
