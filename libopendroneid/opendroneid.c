@@ -164,7 +164,7 @@ void odid_initUasData(ODID_UAS_Data *data)
 */
 static uint8_t encodeDirection(float Direction, uint8_t *EWDirection)
 {
-    unsigned int direction_int = (unsigned int) roundf(Direction);
+    unsigned int direction_int = (unsigned int)(Direction);
     if (direction_int < 180) {
         *EWDirection = 0;
     } else {
@@ -252,7 +252,7 @@ static uint16_t encodeTimeStamp(float Seconds_data)
     if (Seconds_data == INV_TIMESTAMP)
         return INV_TIMESTAMP;
     else
-        return (uint16_t) intRangeMax((int64_t) roundf(Seconds_data*10), 0, MAX_TIMESTAMP * 10);
+        return (uint16_t)(((uint64_t)(Seconds_data*10)) % (INV_TIMESTAMP - 1));
 }
 
 /**
