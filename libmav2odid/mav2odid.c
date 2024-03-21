@@ -377,8 +377,8 @@ int m2o_system(mav2odid_t *m2o, mavlink_open_drone_id_system_t *mavSystem)
 */
 int m2o_operatorId(mav2odid_t *m2o, mavlink_open_drone_id_operator_id_t *mavOperatorId)
 {
-    if (!mavOperatorId)
-        return ODID_FAIL;
+//     if (!mavOperatorId) // Make operator ID optional
+//         return ODID_FAIL;
 
     ODID_OperatorID_data operatorId;
     operatorId.OperatorIdType = (ODID_operatorIdType_t) mavOperatorId->operator_id_type;
@@ -611,8 +611,8 @@ void m2o_system2Mavlink(mavlink_open_drone_id_system_t *mavSystem,
 void m2o_operatorId2Mavlink(mavlink_open_drone_id_operator_id_t *mavOperatorID,
                             ODID_OperatorID_data *operatorID)
 {
-    if (!mavOperatorID || !operatorID)
-        return;
+    // if (!mavOperatorID || !operatorID) // Make operator ID optional
+    //     return;
 
     mavOperatorID->operator_id_type = (MAV_ODID_OPERATOR_ID_TYPE) operatorID->OperatorIdType;
     for (int i = 0; i < ODID_ID_SIZE; i++)

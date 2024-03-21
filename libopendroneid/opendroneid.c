@@ -560,7 +560,7 @@ int encodeMessagePack(ODID_MessagePack_encoded *outEncoded, ODID_MessagePack_dat
 }
 
 /**
-* Dencode direction from Open Drone ID packed message
+* Decode direction from Open Drone ID packed message
 *
 * @param Direction_enc encoded direction
 * @param EWDirection East/West direction flag
@@ -575,7 +575,7 @@ static float decodeDirection(uint8_t Direction_enc, uint8_t EWDirection)
 }
 
 /**
-* Dencode speed from Open Drone ID packed message
+* Decode speed from Open Drone ID packed message
 *
 * @param Speed_enc encoded speed
 * @param mult multiplier flag
@@ -603,7 +603,7 @@ static float decodeSpeedVertical(int8_t SpeedVertical_enc)
 /**
 * Decode Latitude or Longitude value into a signed Integer ODID format
 *
-* @param LatLon_enc Either Lat or Lon ecoded int value
+* @param LatLon_enc Either Lat or Lon encoded int value
 * @return decoded (double) Lat or Lon
 */
 static double decodeLatLon(int32_t LatLon_enc)
